@@ -30,10 +30,10 @@ const SignIn = () => {
                             {errors.password && <span>This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">SignIn</button>
+                            <button type="submit" className="btn btn-primary">SignIn</button>
                         </div>
                     </div>
-                    <p className="text-white text-center pb-24">New to here? <span className="text-red-700 font-bold"><Link to='/signUp'> SingUP</Link></span></p>
+                    <p className="text-white text-center pb-72 md:pb-24">New to here? <span className="text-red-700 font-bold"><Link to='/signUp'> SingUP</Link></span></p>
                 </form>
             </div >
         </div >

@@ -1,12 +1,27 @@
 import { useForm } from "react-hook-form"
 import img from '../../../assets/reg1.jpg';
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 
 
 const SignUp = () => {
-    const{createUser,profileUpdate}=useContext(AuthContext);
+    const { createUser, profileUpdate } = useContext(AuthContext);
+
+
+    const inputData = async (data) => {
+        const res = await fetch('http://localhost:5000/user', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const result = await res.json();
+        console.log(result);
+      };
+    
+
     const {
         register,
         handleSubmit,
@@ -14,26 +29,16 @@ const SignUp = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        createUser(data.email,data.password)
-        .then(result=>{
-            const user=result.user;
-            console.log(user);
-            profileUpdate(data.name,data.photo);
-
-           useEffect(()=>{
-            fetch('',{
-                method: 'POST',
-                headers:{
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(data)
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                profileUpdate(data.name, data.photo);
+                inputData(data);
             })
-            .then(res=>res.json())
-            .then(data=>console.log(data))
-           },[])
-        })
-        .catch(error=>console.log(error));
-    }
+            .catch(error => console.log(error));
+    };
+    
 
     return (
         <div className=" bg-cover bg-center" style={{ backgroundImage: `url(${img})` }}>
@@ -80,7 +85,7 @@ const SignUp = () => {
                             {errors.role && <span>This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">SignUp</button>
+                            <button type="submit" className="btn btn-primary">SignUp</button>
                         </div>
                     </div>
                     <p className="text-white text-center pb-5">Already have an account? <span className="text-red-700 font-bold"><Link to='/signIn'> Sing In</Link></span></p>

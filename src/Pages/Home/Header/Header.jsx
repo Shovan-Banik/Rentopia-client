@@ -41,7 +41,7 @@ const Header = () => {
                             <div className="bg-black bg-opacity-50 text-white p-4 text-center">
                                 <h2 className="text-3xl md:text-5xl py-5 font-bold">Find Your Home where you get peace.</h2>
                                 <p className="md:text-lg">We are committed to giving you the best service. So, Don't Worry.</p>
-                                <div className='mt-8 flex justify-center gap-5'>
+                                <div className='mt-8 flex justify-center gap-5 pb-8 md:pb-0'>
                                     <button className="btn btn-outline btn-warning">Know More</button>
                                     <button className="btn btn-outline btn-warning">About Us</button>
                                 </div>
@@ -56,7 +56,7 @@ const Header = () => {
                             <div className="bg-black bg-opacity-70 text-white p-4 text-center">
                                 <h2 className="text-3xl md:text-5xl py-5 font-bold">Search your home with affordable price</h2>
                                 <p className="md:text-lg">We are committed to giving you the best service. So, Don't Worry.</p>
-                                <div className='mt-8 flex justify-center gap-5'>
+                                <div className='mt-8 flex justify-center gap-5 pb-8 md:pb-0'>
                                     <button className="btn btn-outline btn-warning">Know More</button>
                                     <button className="btn btn-outline btn-warning">About Us</button>
                                 </div>
@@ -71,7 +71,7 @@ const Header = () => {
                             <div className="bg-black bg-opacity-50 text-white p-4 text-center">
                                 <h2 className="text-3xl md:text-5xl py-5 font-bold">Easily find your home without effort</h2>
                                 <p className="md:text-lg">We are committed to giving you the best service. So, Don't Worry.</p>
-                                <div className='mt-8 flex justify-center gap-5'>
+                                <div className='mt-8 flex justify-center gap-5 pb-8 md:pb-0'>
                                     <button className="btn btn-outline btn-warning">Know More</button>
                                     <button className="btn btn-outline btn-warning">About Us</button>
                                 </div>
@@ -86,7 +86,7 @@ const Header = () => {
                             <div className="bg-black bg-opacity-50 text-white p-4 text-center">
                                 <h2 className="text-3xl md:text-5xl py-5 font-bold">Find Your Home where you get peace.</h2>
                                 <p className="md:text-lg">We are committed to giving you the best service. So, Don't Worry.</p>
-                                <div className='mt-8 flex justify-center gap-5'>
+                                <div className='mt-8 flex justify-center gap-5 pb-8 md:pb-0'>
                                     <button className="btn btn-outline btn-warning">Know More</button>
                                     <button className="btn btn-outline btn-warning">About Us</button>
                                 </div>
