@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form"
 import img from '../../../assets/reg1.jpg';
-import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext} from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
-    const { createUser, profileUpdate } = useContext(AuthContext);
-
+    const { createUser, profileUpdate,logOut } = useContext(AuthContext);
+    const navigate=useNavigate();
 
     const inputData = async (data) => {
         const res = await fetch('http://localhost:5000/user', {
@@ -20,6 +21,11 @@ const SignUp = () => {
         const result = await res.json();
         console.log(result);
       };
+      const handleLogOut=()=>{
+        logOut()
+        .then()
+        .catch(error=>console.log(error))
+      }
     
 
     const {
@@ -35,6 +41,15 @@ const SignUp = () => {
                 console.log(user);
                 profileUpdate(data.name, data.photo);
                 inputData(data);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  handleLogOut();
+                  navigate('/signIn');
             })
             .catch(error => console.log(error));
     };

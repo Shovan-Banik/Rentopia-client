@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
+    const { user,logOut } = useContext(AuthContext);
+    const handleLogOut=()=>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>console.log(error))
+    }
     const navOption = <>
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
-        <li className='hover:bg-yellow-400'><Link to='/signUp'>SignUp</Link></li>
-        <li className='hover:bg-yellow-400'><Link to='/signIn'>SignIn</Link></li>
-
+        <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
     </>
     return (
         <>
@@ -30,7 +33,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="w-10 tooltip tooltip-left" data-tip={user?.displayName}>
+                    {/* <li className='hover:bg-yellow-400 hover:text-black list-none mr-8 p-2'><Link to='/signUp'>SignUp</Link></li> className='hover:bg-yellow-400 hover:text-black list-none mr-16 p-2' */}
+                    {
+                        user? <Link><button onClick={handleLogOut} className='btn btn-warning btn-sm mr-4 md:mr-16'>Logout</button></Link>: 
+                        <Link to='/signIn'><button className='btn btn-warning btn-sm mr-16'>SignIn</button></Link>
+                    }
+                    <div className="w-10 tooltip tooltip-left mr-4" data-tip={user?.displayName}>
                         <img className='rounded-full ' src={user?.photoURL} />
                     </div>
                 </div>

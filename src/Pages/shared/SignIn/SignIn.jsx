@@ -1,14 +1,34 @@
 import { useForm } from "react-hook-form"
 import img from '../../../assets/reg1.jpg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
+    const{signIn}=useContext(AuthContext);
+    const navigate=useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) =>{
+        signIn(data.email,data.password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Login Successful',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              navigate('/');
+        })
+        .catch(error=>console.log(error))
+    }
     return (
         <div className=" bg-cover bg-center" style={{ backgroundImage: `url(${img})` }}>
             <h2 className="text-3xl font-bold text-center pt-24 pb-5 text-white">SignIn Please</h2>
