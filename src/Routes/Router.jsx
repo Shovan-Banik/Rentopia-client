@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home/Home";
 import SignUp from "../Pages/shared/SignUp/SignUp";
 import SignIn from "../Pages/shared/SignIn/SignIn";
 import AddHome from "../Pages/AddHome/AddHome";
+import FindProperty from "../Pages/FindProperty/FindProperty";
+import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -23,8 +25,16 @@ const router = createBrowserRouter([
           element: <SignIn></SignIn>
         },
         {
+          path: '/findProperty',
+          element: <FindProperty></FindProperty>
+        },
+        {
           path: '/addHome',
           element: <AddHome></AddHome>
+        },
+        {
+          path: '/viewDetails',
+          element: <ViewDetails></ViewDetails>
         }
       ]
     },

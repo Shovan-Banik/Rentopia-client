@@ -11,6 +11,7 @@ const Navbar = () => {
     }
     const navOption = <>
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
+        <li className='hover:bg-yellow-400'><Link to='/findProperty'>Find Property</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
     </>
     return (
