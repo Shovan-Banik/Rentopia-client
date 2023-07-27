@@ -5,8 +5,6 @@ import 'react-tabs/style/react-tabs.css';
 import useProperty from '../../hooks/useProperty';
 import PropertyTab from '../shared/PropertyTab/PropertyTab';
 
-
-
 const FindProperty = () => {
     const [tabIndex, setTabIndex] = useState(0);
     const [property] = useProperty();

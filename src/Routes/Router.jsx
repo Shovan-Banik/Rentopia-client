@@ -6,6 +6,7 @@ import SignIn from "../Pages/shared/SignIn/SignIn";
 import AddHome from "../Pages/AddHome/AddHome";
 import FindProperty from "../Pages/FindProperty/FindProperty";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
           element: <AddHome></AddHome>
         },
         {
-          path: '/viewDetails',
-          element: <ViewDetails></ViewDetails>
+          path: '/viewDetails/:id',
+          element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
         }
       ]
     },
