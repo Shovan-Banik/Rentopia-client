@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { set } from "react-hook-form";
 
 const useProperty = () => {
     const[category,setCategory]=useState([]);

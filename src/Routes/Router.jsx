@@ -7,6 +7,9 @@ import AddHome from "../Pages/AddHome/AddHome";
 import FindProperty from "../Pages/FindProperty/FindProperty";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import WishList from "../Pages/Dashboard/WishList/WishList";
+import BookedHouse from "../Pages/Dashboard/BookedHouse/BookedHouse";
 
 const router = createBrowserRouter([
     {
@@ -39,5 +42,20 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'/dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path: 'wishList',
+          element: <WishList></WishList>
+        },
+        {
+          path:'bookedHouse',
+          element: <BookedHouse></BookedHouse>
+
+        }
+      ]
+    }
   ]);
   export default router;

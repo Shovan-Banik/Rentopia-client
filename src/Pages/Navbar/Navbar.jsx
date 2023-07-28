@@ -3,16 +3,21 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
-    const { user,logOut } = useContext(AuthContext);
-    const handleLogOut=()=>{
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
     const navOption = <>
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/findProperty'>Find Property</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
+        <li><Link to='#'><button className="btn btn-warning btn-xs">
+            WishList
+            <div className="badge badge-secondary">+0</div>
+        </button></Link></li>
+
     </>
     return (
         <>
@@ -36,8 +41,8 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {/* <li className='hover:bg-yellow-400 hover:text-black list-none mr-8 p-2'><Link to='/signUp'>SignUp</Link></li> className='hover:bg-yellow-400 hover:text-black list-none mr-16 p-2' */}
                     {
-                        user? <Link><button onClick={handleLogOut} className='btn btn-warning btn-sm mr-4 md:mr-16'>Logout</button></Link>: 
-                        <Link to='/signIn'><button className='btn btn-warning btn-sm mr-16'>SignIn</button></Link>
+                        user ? <Link><button onClick={handleLogOut} className='btn btn-warning btn-sm mr-4 md:mr-16'>Logout</button></Link> :
+                            <Link to='/signIn'><button className='btn btn-warning btn-sm mr-16'>SignIn</button></Link>
                     }
                     <div className="w-10 tooltip tooltip-left mr-4" data-tip={user?.displayName}>
                         <img className='rounded-full ' src={user?.photoURL} />
