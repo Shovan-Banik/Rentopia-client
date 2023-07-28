@@ -8,8 +8,8 @@ import FindProperty from "../Pages/FindProperty/FindProperty";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
-import WishList from "../Pages/Dashboard/WishList/WishList";
 import BookedHouse from "../Pages/Dashboard/BookedHouse/BookedHouse";
+import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
 
 const router = createBrowserRouter([
     {
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
       element:<Dashboard></Dashboard>,
       children:[
         {
-          path: 'wishList',
-          element: <WishList></WishList>
+          path: 'myWishList',
+          element: <MyWishList></MyWishList>
         },
         {
           path:'bookedHouse',
