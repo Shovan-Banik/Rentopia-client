@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useWishList from '../../hooks/useWishList';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const[wishList]=useWishList();
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -15,7 +17,7 @@ const Navbar = () => {
         <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
         <li><Link to='#'><button className="btn btn-warning btn-xs">
             WishList
-            <div className="badge badge-secondary">+0</div>
+            <div className="badge badge-secondary">+{wishList?.length || 0}</div>
         </button></Link></li>
 
     </>

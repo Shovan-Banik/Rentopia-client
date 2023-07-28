@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useWishList from '../../hooks/useWishList';
 
 const ViewDetails = () => {
     const { id } = useParams();
+    const[,refetch]=useWishList();
     const [information, setInformation] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
@@ -30,6 +32,7 @@ const ViewDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
