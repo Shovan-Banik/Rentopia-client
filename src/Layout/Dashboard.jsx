@@ -1,8 +1,10 @@
-import React from 'react';
 import { FaBoxOpen, FaFirstOrder, FaSearch, FaHome, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
+import useUserRoleDB from '../hooks/useUserRoleDB';
 
 const Dashboard = () => {
+    const [userRole] = useUserRoleDB();
+    const role = userRole.role;
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -14,9 +16,24 @@ const Dashboard = () => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-teal-500 text-white">
-                    {/* Sidebar content here */}
-                    <li><NavLink to='/dashboard/myWishList'><FaBoxOpen></FaBoxOpen> My WishList</NavLink></li>
-                    <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked House</NavLink></li>
+                    {
+                        role === 'admin' ? <>
+                            <h3 className='text-3xl font-bold text-white py-4'>Admin Dashboard</h3>
+                            <li><NavLink to='/dashboard/allUser'><FaBoxOpen></FaBoxOpen> All User</NavLink></li>
+                            <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>All Booking</NavLink></li>
+                        </> :
+                            role === 'client' ? <>
+                                <h3 className='text-3xl font-bold text-white py-4'>Client Dashboard</h3>
+                                <li><NavLink to='/dashboard/myWishList'><FaBoxOpen></FaBoxOpen> My WishList</NavLink></li>
+                                <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked House</NavLink></li>
+                            </>:
+                                <>
+                                    <h3 className='text-3xl font-bold text-white py-4'>Owner Dashboard</h3>
+                                    <li><NavLink to='/dashboard/myWishList'><FaBoxOpen></FaBoxOpen> My WishList</NavLink></li>
+                                    <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked House</NavLink></li>
+                                </>
+                    }
+
                     <div className="divider"></div>
                     <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
 

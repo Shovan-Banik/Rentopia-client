@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import BookedHouse from "../Pages/Dashboard/BookedHouse/BookedHouse";
 import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
+import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       path:'/dashboard',
       element:<Dashboard></Dashboard>,
       children:[
+        {
+          path: 'allUser',
+          element: <AllUser></AllUser>
+        },
         {
           path: 'myWishList',
           element: <MyWishList></MyWishList>

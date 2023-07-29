@@ -11,7 +11,7 @@ const SignUp = () => {
     const navigate=useNavigate();
 
     const inputData = async (data) => {
-        const res = await fetch('http://localhost:5000/user', {
+        const res = await fetch('http://localhost:5000/users', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
