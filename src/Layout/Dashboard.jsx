@@ -25,11 +25,11 @@ const Dashboard = () => {
                             role === 'client' ? <>
                                 <h3 className='text-3xl font-bold text-white py-4'>Client Dashboard</h3>
                                 <li><NavLink to='/dashboard/myWishList'><FaBoxOpen></FaBoxOpen> My WishList</NavLink></li>
-                                <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked House</NavLink></li>
+                                <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked Properties</NavLink></li>
                             </>:
                                 <>
                                     <h3 className='text-3xl font-bold text-white py-4'>Owner Dashboard</h3>
-                                    <li><NavLink to='/dashboard/myWishList'><FaBoxOpen></FaBoxOpen> My WishList</NavLink></li>
+                                    <li><NavLink to='/dashboard/addedProperty'><FaBoxOpen></FaBoxOpen> My added Properties</NavLink></li>
                                     <li><NavLink to='/dashboard/bookedHouse'><FaWallet></FaWallet>Booked House</NavLink></li>
                                 </>
                     }

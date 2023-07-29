@@ -15,7 +15,7 @@ const Navbar = () => {
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/findProperty'>Find Property</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
-        <li><Link to='#'><button className="btn btn-warning btn-xs">
+        <li><Link to='/dashboard/myWishList'><button className="btn btn-warning btn-xs">
             WishList
             <div className="badge badge-secondary">+{wishList?.length || 0}</div>
         </button></Link></li>

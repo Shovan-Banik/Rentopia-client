@@ -11,6 +11,7 @@ import Dashboard from "../Layout/Dashboard";
 import BookedHouse from "../Pages/Dashboard/BookedHouse/BookedHouse";
 import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
+import AddedProperty from "../Pages/Dashboard/AddedProperty/AddedProperty";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
           path:'bookedHouse',
           element: <BookedHouse></BookedHouse>
 
+        },
+        {
+          path:'addedProperty',
+          element: <AddedProperty></AddedProperty>
         }
       ]
     }
