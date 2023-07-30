@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import useWishList from '../../hooks/useWishList';
+import useUserRoleDB from '../../hooks/useUserRoleDB';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const[wishList]=useWishList();
+    const[userRole]=useUserRoleDB();
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -14,12 +14,10 @@ const Navbar = () => {
     const navOption = <>
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/findProperty'>Find Property</Link></li>
-        <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
-        <li><Link to='/dashboard/myWishList'><button className="btn btn-warning btn-xs">
-            WishList
-            <div className="badge badge-secondary">+{wishList?.length || 0}</div>
-        </button></Link></li>
-
+        {
+            userRole?.role==='owner' && <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
+        }
+        <li className='hover:bg-yellow-400'><Link to='/dashboard'>Dashboard</Link></li>
     </>
     return (
         <>
