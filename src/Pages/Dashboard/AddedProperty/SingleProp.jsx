@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMoneyCheckAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const SingleProp = ({singleProperty,index,refetch}) => {
@@ -49,7 +49,7 @@ const SingleProp = ({singleProperty,index,refetch}) => {
             <td>{singleProperty.phone}</td>
             <td>{singleProperty.contact}</td>
             <td>
-                <button className="btn btn-warning btn-sm "><FaMoneyCheckAlt className="text-2xl"></FaMoneyCheckAlt></button>
+                <button className="btn btn-warning btn-sm "><FaEdit className="text-2xl"></FaEdit></button>
             </td>
             <td>
                 <button onClick={()=>handleDelete(singleProperty)} className="btn btn-error btn-sm text-2xl"><FaTrashAlt></FaTrashAlt></button>
