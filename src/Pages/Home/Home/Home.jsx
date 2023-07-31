@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Services from '../Services/services';
 import Appartments from '../Appartments/Appartments';
 import Statistic from '../Statistci/Statistic';
+import PhotoGallery from '../PhotoGallery/PhotoGallery';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Services></Services>
             <Appartments></Appartments>
             <Statistic></Statistic>
+            <PhotoGallery></PhotoGallery>
         </div>
     );
 };

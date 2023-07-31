@@ -5,8 +5,8 @@ import Marquee from "react-fast-marquee";
 
 const Appartments = () => {
     const [category] = useProperty();
-    console.log(category);
     const familyHouse = category.filter(house => house.category === 'Family House');
+    console.log(familyHouse);
     return (
         <>
             <div className='mt-12'>
@@ -16,7 +16,7 @@ const Appartments = () => {
             <Marquee className='my-12'>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-5'>
                     {familyHouse.map(singleHouse => <House
-                        key={familyHouse._id}
+                        key={singleHouse._id}
                         singleHouse={singleHouse}
                     ></House>)}
                 </div>
