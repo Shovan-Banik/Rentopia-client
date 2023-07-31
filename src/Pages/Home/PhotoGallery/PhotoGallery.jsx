@@ -23,7 +23,7 @@ const PhotoGallery = () => {
             </div>
             <div className='flex items-center px-4'>
                 <div className='text-center'>
-                    <h2 className='text-5xl font-bold uppercase'>Our Photo Gallery</h2>
+                    <h2 className='text-5xl font-bold uppercase text-green-600'>Our Photo Gallery</h2>
                     <h5 className='text-xl font-semibold py-4 uppercase'>Best of our
                         Event portfolio Photos</h5>
                     <p>Amorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae nibh nisl. Cras etitikis mauris eget lorem ultricies ferme ntum a inti diam. Morbi mollis pellen tesque offs aiug ueia nec rhoncus. Nam ute ultricies.</p>
