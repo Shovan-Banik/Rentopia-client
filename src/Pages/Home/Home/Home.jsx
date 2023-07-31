@@ -5,6 +5,7 @@ import Appartments from '../Appartments/Appartments';
 import Statistic from '../Statistci/Statistic';
 import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import Reviews from '../Reviews/Reviews';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Statistic></Statistic>
             <PhotoGallery></PhotoGallery>
             <Reviews></Reviews>
+            <Contact></Contact>
         </div>
     );
 };

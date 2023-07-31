@@ -27,8 +27,8 @@ const Reviews = () => {
                 <div className="card w-72 md:w-96 bg-base-100 shadow-xl relative">
                         <img className="w-16 h-16 rounded-full border-4 border-green-600 absolute top-0 right-0 -mr-8 -mt-8" src={riv2} alt="" />
                     <div className="card-body">
-                        <h2 className="card-title">Kuddos Boyati</h2>
-                        <p className="font-bold">Banker</p>
+                        <h2 className="card-title">Anonto khalil</h2>
+                        <p className="font-bold">Actor</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nobis ad illo nihil excepturi quam?</p>
                         <p>Rating: ⭐⭐⭐⭐⭐</p>
                     </div>
@@ -36,8 +36,8 @@ const Reviews = () => {
                 <div className="card w-72 md:w-96 bg-base-100 shadow-xl relative">
                         <img className="w-16 h-16 rounded-full border-4 border-green-600 absolute top-0 right-0 -mr-8 -mt-8" src={riv3} alt="" />
                     <div className="card-body">
-                        <h2 className="card-title">Kuddos Boyati</h2>
-                        <p className="font-bold">Banker</p>
+                        <h2 className="card-title">Alom Uddi</h2>
+                        <p className="font-bold">Pagla</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nobis ad illo nihil excepturi quam?</p>
                         <p>Rating: ⭐⭐⭐⭐⭐</p>
                     </div>
