@@ -4,7 +4,7 @@ import { FaHouseUser, FaWarehouse, FaBed, FaStoreAlt, FaHome, FaFemale, FaMale, 
 const Services = () => {
     return (
         <>
-        <h2 className='text-center mt-12 text-3xl font-bold '>What you get here!</h2>
+        <h2 className='text-center mt-12 text-5xl font-bold uppercase text-green-600'>What you get here!</h2>
             <div className='mt-12 grid grid-cols-3 md:grid-cols-8'>
                 <div className='border-2 p-3 border-gray-400 text-center'>
                     <FaHome className='text-5xl text-orange-700 mx-auto'></FaHome>
