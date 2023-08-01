@@ -6,7 +6,6 @@ import Marquee from "react-fast-marquee";
 const Appartments = () => {
     const [category] = useProperty();
     const familyHouse = category.filter(house => house.category === 'Family House');
-    console.log(familyHouse);
     return (
         <>
             <div className='mt-12'>

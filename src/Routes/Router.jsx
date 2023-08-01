@@ -12,6 +12,9 @@ import BookedHouse from "../Pages/Dashboard/BookedHouse/BookedHouse";
 import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AddedProperty from "../Pages/Dashboard/AddedProperty/AddedProperty";
+import Booking from "../Pages/Dashboard/Booking/Booking";
+import PaymentSuccess from "../Pages/Dashboard/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/Dashboard/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +67,19 @@ const router = createBrowserRouter([
         {
           path:'addedProperty',
           element: <AddedProperty></AddedProperty>
+        },
+        {
+          path:'bookings/:id',
+          element:<Booking></Booking>,
+
+        },
+        {
+          path: 'payment/success/:tranId',
+          element: <PaymentSuccess></PaymentSuccess>
+        },
+        {
+          path: 'payment/fail/:tranId',
+          element: <PaymentFail></PaymentFail>
         }
       ]
     }
