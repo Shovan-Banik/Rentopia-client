@@ -1,6 +1,5 @@
 import animation from '../../assets/annimation/animation_lkjtk6ub.json';
 import Lottie from "lottie-react";
-import { useEffect } from 'react';
 import { useForm } from "react-hook-form"
 import Swal from 'sweetalert2';
 

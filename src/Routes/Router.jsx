@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           element: <FindProperty></FindProperty>
         },
         {
-          path: '/addHome',
+          path: 'addHome',
           element: <AddHome></AddHome>
         },
         {
@@ -76,7 +76,8 @@ const router = createBrowserRouter([
         },
         {
           path:'updateProperty/:id',
-          element: <UpdateProperty></UpdateProperty>
+          element: <UpdateProperty></UpdateProperty>,
+          loader:({params})=>fetch(`http://localhost:5000/property/${params.id}`)
         },
         {
           path:'bookings/:id',

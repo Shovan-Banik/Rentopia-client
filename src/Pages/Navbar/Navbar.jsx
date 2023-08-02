@@ -5,7 +5,7 @@ import useUserRoleDB from '../../hooks/useUserRoleDB';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const[userRole]=useUserRoleDB();
+    const [userRole] = useUserRoleDB();
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -15,9 +15,23 @@ const Navbar = () => {
         <li className='hover:bg-yellow-400'><Link to='/'>Home</Link></li>
         <li className='hover:bg-yellow-400'><Link to='/findProperty'>Find Property</Link></li>
         {
-            userRole?.role==='owner' && <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
+            userRole?.role === 'owner' && <li className='hover:bg-yellow-400'><Link to='/addHome'>Add Property</Link></li>
         }
-        <li className='hover:bg-yellow-400'><Link to='/dashboard'>Dashboard</Link></li>
+        {userRole?.role === 'admin' && (
+            <li>
+                <Link className='hover:bg-yellow-400' to="/dashboard/allUser">Dashboard</Link>
+            </li>
+        )}
+        {userRole?.role === 'owner' && (
+            <li>
+                <Link className='hover:bg-yellow-400' to="/dashboard/addedProperty">Dashboard</Link>
+            </li>
+        )}
+        {userRole?.role === 'client' && (
+            <li>
+                <Link className='hover:bg-yellow-400' to="/dashboard/myWishList">Dashboard</Link>
+            </li>
+        )}
     </>
     return (
         <>
