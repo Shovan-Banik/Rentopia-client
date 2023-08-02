@@ -15,6 +15,8 @@ import AddedProperty from "../Pages/Dashboard/AddedProperty/AddedProperty";
 import Booking from "../Pages/Dashboard/Booking/Booking";
 import PaymentSuccess from "../Pages/Dashboard/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Dashboard/PaymentFail/PaymentFail";
+import AllBookedHouse from "../Pages/Dashboard/AllBookedHouse/AllBookedHouse";
+import UpdateProperty from "../Pages/Dashboard/UpdateProperty/UpdateProperty";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
           element: <AllUser></AllUser>
         },
         {
+          path:'allBookedHouse',
+          element:<AllBookedHouse></AllBookedHouse>
+        },
+        {
           path: 'myWishList',
           element: <MyWishList></MyWishList>
         },
@@ -67,6 +73,10 @@ const router = createBrowserRouter([
         {
           path:'addedProperty',
           element: <AddedProperty></AddedProperty>
+        },
+        {
+          path:'updateProperty/:id',
+          element: <UpdateProperty></UpdateProperty>
         },
         {
           path:'bookings/:id',

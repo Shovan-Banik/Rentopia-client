@@ -13,7 +13,7 @@ const Appartments = () => {
                 <p className='font-bold text-center pt-2 pb-5'>FIND YOUR ROOMS, FOR YOUR ABAILITY</p>
             </div>
             <Marquee className='my-12'>
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-5'>
+                <div className='grid grid-cols-4'>
                     {familyHouse.map(singleHouse => <House
                         key={singleHouse._id}
                         singleHouse={singleHouse}

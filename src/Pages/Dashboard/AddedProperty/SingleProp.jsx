@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SingleProp = ({singleProperty,index,refetch}) => {
+    const navigate=useNavigate();
     const handleDelete=singleProperty=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -32,6 +34,10 @@ const SingleProp = ({singleProperty,index,refetch}) => {
           })
        
     }
+
+    const handleUpdate=(singleProperty)=>{
+        navigate(`/dashboard/updateProperty/${singleProperty._id}`);
+    }
     
     return (
         <tr className="border-2 border-gray-300">
@@ -49,7 +55,7 @@ const SingleProp = ({singleProperty,index,refetch}) => {
             <td>{singleProperty.phone}</td>
             <td>{singleProperty.contact}</td>
             <td>
-                <button className="btn btn-warning btn-sm "><FaEdit className="text-2xl"></FaEdit></button>
+                <button onClick={()=>handleUpdate(singleProperty)} className="btn btn-warning btn-sm "><FaEdit className="text-2xl"></FaEdit></button>
             </td>
             <td>
                 <button onClick={()=>handleDelete(singleProperty)} className="btn btn-error btn-sm text-2xl"><FaTrashAlt></FaTrashAlt></button>
