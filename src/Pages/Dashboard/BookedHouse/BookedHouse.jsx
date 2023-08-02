@@ -5,7 +5,7 @@ const BookedHouse = () => {
     const [bookedProperty, setBookedProperty] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`https://rentopia-server.vercel.app/bookings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setBookedProperty(data))
     }, [])

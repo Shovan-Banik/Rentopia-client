@@ -6,10 +6,14 @@ import Statistic from '../Statistci/Statistic';
 import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import Reviews from '../Reviews/Reviews';
 import Contact from '../Contact/Contact';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Rentopia | Home</title>
+            </Helmet>
             <Header></Header>
             <Services></Services>
             <Appartments></Appartments>

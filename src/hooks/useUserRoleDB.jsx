@@ -8,7 +8,7 @@ const useUserRoleDB = () => {
     const {refetch, data: userRole=[]} = useQuery({
         queryKey: ['user',user?.email],
         queryFn: async()=>{
-            const res = await fetch(`http://localhost:5000/user?email=${user?.email}`)
+            const res = await fetch(`https://rentopia-server.vercel.app/user?email=${user?.email}`)
             return res.json();
         },
       })
@@ -22,7 +22,7 @@ export default useUserRoleDB;
 //     const{user}=useContext(AuthContext);
 
 //     useEffect(()=>{
-//      fetch(`http://localhost:5000/users/${user?.email}`)
+//      fetch(`https://rentopia-server.vercel.app/users/${user?.email}`)
 //      .then(res=>res.json())
 //      .then(data=>setUserRole(data));
 //     },[])

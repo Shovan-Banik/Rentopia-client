@@ -19,7 +19,7 @@ const useWishList = () => {
             return res.data;
         },
         // queryFn: async()=>{
-        //     const res = await fetch(`http://localhost:5000/wishLists?email=${user?.email}`,{headers:{
+        //     const res = await fetch(`https://rentopia-server.vercel.app/wishLists?email=${user?.email}`,{headers:{
         //         authorization: `bearer ${token}`
         //     }})
         //     return res.json();

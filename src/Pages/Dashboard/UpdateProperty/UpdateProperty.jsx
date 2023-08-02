@@ -31,7 +31,7 @@ const UpdateProperty = () => {
             location
         }
 
-        fetch(`http://localhost:5000/properties/${id}`, {
+        fetch(`https://rentopia-server.vercel.app/properties/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

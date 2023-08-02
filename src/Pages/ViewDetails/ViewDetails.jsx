@@ -12,7 +12,7 @@ const ViewDetails = () => {
     const { user } = useContext(AuthContext);
     const [userRole]=useUserRoleDB();
     useEffect(() => {
-        fetch(`http://localhost:5000/property/${id}`)
+        fetch(`https://rentopia-server.vercel.app/property/${id}`)
             .then(res => res.json())
             .then(data => {
                 setInformation(data);
@@ -24,7 +24,7 @@ const ViewDetails = () => {
     const handleWishList = (information) => {
         const { name, phone, price, category, details, location, photo, _id } = information;
         const wishListItem = { ItemId: _id, name, phone, details, category,photo, location, price, email: user.email };
-        fetch('http://localhost:5000/wishLists', {
+        fetch('https://rentopia-server.vercel.app/wishLists', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

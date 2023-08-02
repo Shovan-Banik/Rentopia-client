@@ -10,7 +10,7 @@ const useUserFromDB = () => {
             return res.data;
         },
         // queryFn: async()=>{
-        //     const res = await fetch('http://localhost:5000/users')
+        //     const res = await fetch('https://rentopia-server.vercel.app/users')
         //     return res.json();
         // },
       })

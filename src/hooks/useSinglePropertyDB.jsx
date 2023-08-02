@@ -7,7 +7,7 @@ const useSinglePropertyDB = () => {
     const {refetch, data: singleAddedProperty=[]} = useQuery({
         queryKey: ['properties', user?.displayName],
         queryFn: async()=>{
-            const res = await fetch(`http://localhost:5000/properties?name=${user?.displayName}`)
+            const res = await fetch(`https://rentopia-server.vercel.app/properties?name=${user?.displayName}`)
             return res.json();
         },
       })

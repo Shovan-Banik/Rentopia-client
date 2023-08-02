@@ -14,7 +14,7 @@ const Booking = () => {
     const onSubmit = (data) => {
         data.productId=id;
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://rentopia-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         {
           path:'updateProperty/:id',
           element: <UpdateProperty></UpdateProperty>,
-          loader:({params})=>fetch(`http://localhost:5000/property/${params.id}`)
+          loader:({params})=>fetch(`https://rentopia-server.vercel.app/property/${params.id}`)
         },
         {
           path:'bookings/:id',

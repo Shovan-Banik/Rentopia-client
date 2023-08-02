@@ -16,7 +16,7 @@ const SingleProp = ({singleProperty,index,refetch}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/property/${singleProperty._id}`,{
+                fetch(`https://rentopia-server.vercel.app/property/${singleProperty._id}`,{
                     method: 'DELETE'
                 })
                 .then(res=>res.json())

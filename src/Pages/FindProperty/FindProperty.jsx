@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import useProperty from '../../hooks/useProperty';
 import PropertyTab from '../shared/PropertyTab/PropertyTab';
+import { Helmet } from 'react-helmet-async';
 
 const FindProperty = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -18,6 +19,9 @@ const FindProperty = () => {
     const warehouse = property.filter(singleProperty => singleProperty.category === 'Warehouse');
     return (
         <>
+            <Helmet>
+                <title>Rentopia | Find Property</title>
+            </Helmet>
             <Cover></Cover>
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className="md:space-x-4 md:pl-36 mt-12">
